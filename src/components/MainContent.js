@@ -1,35 +1,27 @@
 import React from 'react';
-import './MainContent.css';
+import { Route, Routes } from 'react-router-dom';
+import Home from '../pages/Home';
+import Page1 from '../pages/Page1';
+import Page2 from '../pages/Page2';
+import Page3 from '../pages/Page3';
+import Page4 from '../pages/Page4';
+import Page5 from '../pages/Page5';
+// 导入更多页面组件
 
-const MainContent = () => {
+const Content = () => {
     return (
-        <div className="main-content">
-            <div className="header">
-                <h1>首页</h1>
-            </div>
-            <div className="content">
-                <div className="task-list">
-                    <h3>待办</h3>
-                    <ul>
-                        <li>关于AZAPzsAE的大策略额度新增申请</li>
-                        <li>关于AZAPzb45的大策略额度新增申请</li>
-                        <li>关于AZAGidMR的大策略额度新增申请</li>
-                        <li>关于自动化测试大策略类型001的大策略额度新增申请</li>
-                        <li>关于测试专用货基的基金申购申请</li>
-                    </ul>
-                </div>
-                <div className="reminders">
-                    <h3>到期提醒</h3>
-                    <ul>
-                        <li>现金管理类理财产品</li>
-                        <li>王源市包装集团</li>
-                        <li>成熟产品型</li>
-                        <li>子策略</li>
-                    </ul>
-                </div>
-            </div>
+        <div className="content">
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/page1" element={<Page1 />} />
+                <Route path="/page2" element={<Page2 />} />
+                <Route path="/page3" element={<Page3 />} />
+                <Route path="/page4" element={<Page4 />} />
+                <Route path="/page5" element={<Page5 />} />
+                {/* 添加更多路由 */}
+            </Routes>
         </div>
     );
 };
 
-export default MainContent;
+export default Content;

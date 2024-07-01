@@ -1,26 +1,16 @@
 import React from 'react';
-import './Sidebar.css';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
     return (
         <div className="sidebar">
-            <div className="sidebar-header">
-                <h2>兴业银行</h2>
-                <p>自营投资专业管理类系统</p>
-            </div>
-            <ul className="sidebar-menu">
-                <li><a href="#">额度申请</a></li>
-                <li><a href="#">通知书管理</a></li>
-                <li><a href="#">基金交易管理</a></li>
-                <li><a href="#">存续期管理</a></li>
-                <li><a href="#">额度管理</a></li>
-                <li><a href="#">基金信息维护</a></li>
-                <li><a href="#">合同管理</a></li>
-                <li><a href="#">迁移管理</a></li>
-                <li><a href="#">外部数据查询</a></li>
-                <li><a href="#">系统管理</a></li>
-                <li><a href="#">工作流</a></li>
-            </ul>
+            <Link to="/">首页</Link>
+            <Link to="/page1">上传训练集</Link>
+            <Link to="/page2">训练集数据分析</Link>
+            <Link to="/page3">上传预测集</Link>
+            <Link to="/page4">预测集分析</Link>
+            <Link to="/page5">修改模型</Link>
+            {/* 添加更多链接 */}
         </div>
     );
 };

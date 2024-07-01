@@ -1,15 +1,18 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import MainContent from './components/MainContent';
+import Content from './components/MainContent';
 import './App.css';
 
-function App() {
+const App = () => {
     return (
-        <div className="App">
-            <Sidebar />
-            <MainContent />
-        </div>
+        <Router>
+            <div className="app">
+                <Sidebar />
+                <Content />
+            </div>
+        </Router>
     );
-}
+};
 
 export default App;

@@ -24,3 +24,11 @@
 .task-list li, .reminders li {
     margin: 10px 0;
 }
+
+  .content {
+    flex-grow: 1; /* 使内容区域根据窗口大小进行调整 */
+    margin-left: 220px; /* 留出侧边栏和间距的空间 */
+    padding: 20px;
+  }
+  
+  

@@ -7,6 +7,7 @@ import Page3 from '../pages/Page3';
 import Page4 from '../pages/Page4';
 import Page5 from '../pages/Page5';
 // 导入更多页面组件
+import './MainContent.css';
 
 const Content = () => {
     return (

@@ -1,15 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-import Content from './components/MainContent';
+import MainContent from './components/MainContent';
 import './App.css';
 
 const App = () => {
+    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+
+    const toggleSidebar = () => {
+        setIsSidebarOpen(!isSidebarOpen);
+    };
+
     return (
         <Router>
             <div className="app">
-                <Sidebar />
-                <Content />
+                <Sidebar isOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
+                <MainContent isSidebarOpen={isSidebarOpen} />
             </div>
         </Router>
     );

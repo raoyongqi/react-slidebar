@@ -20,7 +20,7 @@ const Sidebar = () => {
                 <NavLink exact to="/" activeClassName="active">首页</NavLink>
                 <div>
                     <div onClick={() => handleMenuClick('menu1')} className="menu">
-                        上传
+                        上传 <span className="menu-arrow">&#9660;</span>
                     </div>
                     {openMenu === 'menu1' && (
                         <div className="submenu">
@@ -31,7 +31,7 @@ const Sidebar = () => {
                 </div>
                 <div>
                     <div onClick={() => handleMenuClick('menu2')} className="menu">
-                        数据分析
+                        数据分析 <span className="menu-arrow">&#9660;</span>
                     </div>
                     {openMenu === 'menu2' && (
                         <div className="submenu">

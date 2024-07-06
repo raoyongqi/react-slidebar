@@ -1,6 +1,6 @@
-// src/components/FileUpload.js
 import React, { useState } from 'react';
 import axios from 'axios';
+import ExcelTable from './ExcelTable';
 
 const FileUpload = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -26,7 +26,7 @@ const FileUpload = () => {
                 }
             });
 
-            setUploadedData(response.data.files);
+            setUploadedData(response.data[selectedFile.name]);
         } catch (error) {
             console.error('Error uploading file: ', error);
         } finally {
@@ -45,19 +45,7 @@ const FileUpload = () => {
             {uploadedData && (
                 <div>
                     <h3>Uploaded Data</h3>
-                    {uploadedData.map((file, index) => (
-                        <div key={index}>
-                            <h4>{file.filename}</h4>
-                            <ul>
-                                {file.data.map((row, idx) => (
-                                    <li key={idx}>
-                                        {row.column1} - {row.column2}
-                                        {/* Display more columns as needed */}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    ))}
+                    <ExcelTable data={uploadedData} />
                 </div>
             )}
         </div>
